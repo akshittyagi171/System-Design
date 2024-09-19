@@ -5,7 +5,7 @@ import Startergy_Pattern.startegyImpl.NormalDriveStrategy;
 
 public class GoodsVehicle extends Vehicle {
 
-    GoodsVehicle(){
+    public GoodsVehicle(){
         super(new NormalDriveStrategy());
     }
 }

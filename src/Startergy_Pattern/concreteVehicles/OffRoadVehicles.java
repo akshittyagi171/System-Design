@@ -5,7 +5,7 @@ import Startergy_Pattern.startegyImpl.SportsDriveStrategy;
 
 public class OffRoadVehicles extends Vehicle {
 
-    OffRoadVehicles(){
+    public OffRoadVehicles(){
         super(new SportsDriveStrategy());
     }
 }
