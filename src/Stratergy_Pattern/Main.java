@@ -1,8 +1,8 @@
-package Startergy_Pattern;
+package Stratergy_Pattern;
 
-import Startergy_Pattern.concreteVehicles.GoodsVehicle;
-import Startergy_Pattern.concreteVehicles.OffRoadVehicles;
-import Startergy_Pattern.concreteVehicles.SportsVehicle;
+import Stratergy_Pattern.concreteVehicles.GoodsVehicle;
+import Stratergy_Pattern.concreteVehicles.OffRoadVehicles;
+import Stratergy_Pattern.concreteVehicles.SportsVehicle;
 
 public class Main {
 

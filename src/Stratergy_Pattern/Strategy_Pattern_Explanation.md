@@ -21,22 +21,22 @@ The `Vehicle` class is constructed with a `DriveStrategy` object, which is the s
 for driving. This allows the vehicle's driving behavior to be interchangeable based on the strategy.
 
 ```java
-package Startergy_Pattern.DriveContext;
+package Stratergy_Pattern.DriveContext;
 
-import Startergy_Pattern.strategy.DriveStrategy;
+import Stratergy_Pattern.strategy.DriveStrategy;
 
 public class Vehicle {
 
-    DriveStrategy driveObject;
+   DriveStrategy driveObject;
 
-    // Constructor Injection
-    public Vehicle(DriveStrategy driveObj){
-        this.driveObject = driveObj;
-    }
+   // Constructor Injection
+   public Vehicle(DriveStrategy driveObj) {
+      this.driveObject = driveObj;
+   }
 
-    public void drive(){
-        driveObject.drive();
-    }
+   public void drive() {
+      driveObject.drive();
+   }
 }
 ```
 
@@ -46,10 +46,10 @@ interface is the contract that defines the `drive()` method. Any class that impl
 provide its own behavior for driving.
 
 ```java
-package Startergy_Pattern.strategy;
+package Stratergy_Pattern.strategy;
 
 public interface DriveStrategy {
-    public void drive();
+   public void drive();
 }
 ```
 
@@ -61,26 +61,26 @@ In our example, `NormalDriveStrategy` represents a strategy where normal driving
 `SportsDriveStrategy` represents a strategy for high-performance driving.
 
 ```java
-package Startergy_Pattern.startegyImpl;
+package Stratergy_Pattern.strategyImpl;
 
-import Startergy_Pattern.strategy.DriveStrategy;
+import Stratergy_Pattern.strategy.DriveStrategy;
 
 public class NormalDriveStrategy implements DriveStrategy {
-    @Override
-    public void drive() {
-        System.out.println("You are using Normal Drive Strategy");
-    }
+   @Override
+   public void drive() {
+      System.out.println("You are using Normal Drive Strategy");
+   }
 }
 
-package Startergy_Pattern.startegyImpl;
+package Stratergy_Pattern.strategyImpl;
 
-import Startergy_Pattern.strategy.DriveStrategy;
+import Stratergy_Pattern.strategy.DriveStrategy;
 
 public class SportsDriveStrategy implements DriveStrategy {
-    @Override
-    public void drive() {
-        System.out.println("You are using Sports Drive Strategy");
-    }
+   @Override
+   public void drive() {
+      System.out.println("You are using Sports Drive Strategy");
+   }
 }
 ```
 
@@ -92,37 +92,37 @@ The strategy is passed to the `Vehicle` class through constructor injection, all
 use a different driving strategy.
 
 ```java
-package Startergy_Pattern.concreteVehicles;
+package Stratergy_Pattern.concreteVehicles;
 
-import Startergy_Pattern.DriveContext.Vehicle;
-import Startergy_Pattern.startegyImpl.NormalDriveStrategy;
+import Stratergy_Pattern.DriveContext.Vehicle;
+import Stratergy_Pattern.strategyImpl.NormalDriveStrategy;
 
 public class GoodsVehicle extends Vehicle {
-    GoodsVehicle(){
-        super(new NormalDriveStrategy());
-    }
+   GoodsVehicle() {
+      super(new NormalDriveStrategy());
+   }
 }
 
-package Startergy_Pattern.concreteVehicles;
+package Stratergy_Pattern.concreteVehicles;
 
-import Startergy_Pattern.DriveContext.Vehicle;
-import Startergy_Pattern.startegyImpl.SportsDriveStrategy;
+import Stratergy_Pattern.DriveContext.Vehicle;
+import Stratergy_Pattern.strategyImpl.SportsDriveStrategy;
 
 public class OffRoadVehicles extends Vehicle {
-    OffRoadVehicles(){
-        super(new SportsDriveStrategy());
-    }
+   OffRoadVehicles() {
+      super(new SportsDriveStrategy());
+   }
 }
 
-package Startergy_Pattern.concreteVehicles;
+package Stratergy_Pattern.concreteVehicles;
 
-import Startergy_Pattern.DriveContext.Vehicle;
-import Startergy_Pattern.startegyImpl.SportsDriveStrategy;
+import Stratergy_Pattern.DriveContext.Vehicle;
+import Stratergy_Pattern.strategyImpl.SportsDriveStrategy;
 
 public class SportsVehicle extends Vehicle {
-    SportsVehicle(){
-        super(new SportsDriveStrategy());
-    }
+   SportsVehicle() {
+      super(new SportsDriveStrategy());
+   }
 }
 ```
 
@@ -137,31 +137,31 @@ public class SportsVehicle extends Vehicle {
 Consider the following main class, which creates different vehicle objects and uses their respective strategies:
 
 ```java
-package Startergy_Pattern;
+package Stratergy_Pattern;
 
-import Startergy_Pattern.concreteVehicles.GoodsVehicle;
-import Startergy_Pattern.concreteVehicles.OffRoadVehicles;
-import Startergy_Pattern.concreteVehicles.SportsVehicle;
+import Stratergy_Pattern.concreteVehicles.GoodsVehicle;
+import Stratergy_Pattern.concreteVehicles.OffRoadVehicles;
+import Stratergy_Pattern.concreteVehicles.SportsVehicle;
 
 public class Main {
 
-    public static void main(String[] args) {
+   public static void main(String[] args) {
 
-        // GoodsVehicle using NormalDriveStrategy
-        GoodsVehicle goodsVehicle = new GoodsVehicle();
-        System.out.println("Goods Vehicle:");
-        goodsVehicle.drive();
-        
-        // OffRoadVehicles using SportsDriveStrategy
-        OffRoadVehicles offRoadVehicle = new OffRoadVehicles();
-        System.out.println("\nOff-Road Vehicle:");
-        offRoadVehicle.drive();
-        
-        // SportsVehicle using SportsDriveStrategy
-        SportsVehicle sportsVehicle = new SportsVehicle();
-        System.out.println("\nSports Vehicle:");
-        sportsVehicle.drive();
-    }
+      // GoodsVehicle using NormalDriveStrategy
+      GoodsVehicle goodsVehicle = new GoodsVehicle();
+      System.out.println("Goods Vehicle:");
+      goodsVehicle.drive();
+
+      // OffRoadVehicles using SportsDriveStrategy
+      OffRoadVehicles offRoadVehicle = new OffRoadVehicles();
+      System.out.println("\nOff-Road Vehicle:");
+      offRoadVehicle.drive();
+
+      // SportsVehicle using SportsDriveStrategy
+      SportsVehicle sportsVehicle = new SportsVehicle();
+      System.out.println("\nSports Vehicle:");
+      sportsVehicle.drive();
+   }
 }
 ```
 

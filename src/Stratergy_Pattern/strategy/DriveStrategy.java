@@ -1,4 +1,4 @@
-package Startergy_Pattern.strategy;
+package Stratergy_Pattern.strategy;
 
 public interface DriveStrategy {
 

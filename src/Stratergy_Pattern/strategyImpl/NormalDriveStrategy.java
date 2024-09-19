@@ -1,6 +1,6 @@
-package Startergy_Pattern.startegyImpl;
+package Stratergy_Pattern.strategyImpl;
 
-import Startergy_Pattern.strategy.DriveStrategy;
+import Stratergy_Pattern.strategy.DriveStrategy;
 
 public class NormalDriveStrategy implements DriveStrategy {
 

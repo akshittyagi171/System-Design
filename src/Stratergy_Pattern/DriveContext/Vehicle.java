@@ -1,6 +1,6 @@
-package Startergy_Pattern.DriveContext;
+package Stratergy_Pattern.DriveContext;
 
-import Startergy_Pattern.strategy.DriveStrategy;
+import Stratergy_Pattern.strategy.DriveStrategy;
 
 public class Vehicle {
 
